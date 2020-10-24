@@ -27,7 +27,7 @@ ui<-fluidPage(
    hr(),
    tags$h1('Reads data from a csv file which contains observations of ship positions, amongst other things, 
 and allows users to select a single vessel and find the pair of consecutive observations between which that 
-vessel moved the greatest amount.  If there is more than one such, pair it returns the most recent.  That vessel 
+vessel moved the greatest amount.  If there is more than one such pair, it returns the most recent.  That vessel 
 movement is displayed with distance moved (m) in a map and also presented in tabular form.')
    ),
    tabPanel(tags$h1('Select Vessel'),
