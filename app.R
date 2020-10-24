@@ -2,6 +2,7 @@ library(shiny)
 library(leaflet)
 library(leaflet.extras)
 library(Imap)
+library(dplyr)
 library(magrittr)
 source('ships.r')
 Ships<-readRDS('SHIPS.RData')
@@ -79,6 +80,7 @@ observeEvent(input$go1,
 observeEvent(input$go2,
    if (length(v$S1)!=0)
      {v$S2<-subset(v$S1, (v$S1)$SHIPNAME==input$nm)
+     v$S2<-arrange(v$S2, (v$S2)$DATETIME)
      v$I<-idobs(v$S2)
      v$S3<-v$S2[v$I:(v$I+1), c(1:2,20) ]
      v$DST<-round(gdist(v$S3[1,2], v$S3[1,1], v$S3[2,2], v$S3[2,1], units='m'))
