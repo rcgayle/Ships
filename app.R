@@ -111,8 +111,8 @@ output$table<-renderTable(
 output$text<-renderPrint(
         {
          if (length(v$S3)!=0)
-            {paste0('Distance between positions: ',v$DST,' m')}
-          else {'Find your ship, matey!'}
+            {cat('Distance between positions: ',v$DST,' m')}
+          else {cat('Find your ship, matey!')}
           }
                         )
 
